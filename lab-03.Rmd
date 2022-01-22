@@ -1,7 +1,7 @@
 ---
 title: "Lab 03 - Nobel laureates"
 author: "Rachel Good"
-date: "January 15, 2022"
+date: "January 22, 2022"
 output: github_document
 ---
 
@@ -13,16 +13,21 @@ library(tidyverse)
 
 ```{r load-data, message=FALSE}
 nobel <- read_csv("data/nobel.csv")
+
 ```
 
 ## Exercises
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+There are 935 observations and 26 variables in the nobel laureates dataset.
+
+```{r variable-details}
+spec(nobel)
+count(nobel)
+nrow(nobel)
+ncol(nobel)
+```
 
 ### Exercise 2
 
