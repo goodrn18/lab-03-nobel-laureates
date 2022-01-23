@@ -15,10 +15,6 @@ library(tidyverse)
 nobel <- read_csv("data/nobel.csv")
 ```
 
-```{r get_more_info}
-library(skimr)
-skim(nobel)
-```
 ## Exercises
 
 ### Exercise 1
@@ -35,9 +31,12 @@ ncol(nobel)
 ### Exercise 2
 
 ```{r new-data-frame}
-nobel %>%
-  mutate(nobel_living = country, gender, died_date) %>%
-  filter(gender != "org",)
+nobel_living <- nobel %>%
+  filter(gender != "org",
+         !is.na(country),
+         is.na(died_date))
+
+nrow(nobel_living)
 ```
 
 ### Exercise 3
