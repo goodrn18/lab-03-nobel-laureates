@@ -89,9 +89,33 @@ nrow(nobel_living)
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 1 here. Add code
-chunks as needed. Don’t forget to label your code chunk. Do not use
-spaces in code chunk labels.
+Excluding the category of economics, a large portion of nobel laureates
+originate outside of the United States, supporting the Buzzfeed article
+headline about the importance of immigration to American Science.
+
+``` r
+nobel_living <- nobel_living %>%
+  mutate(
+    country_us = if_else(country == "USA", "USA", "Other")
+  )
+```
+
+``` r
+nobel_living_science <- nobel_living %>%
+  filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
+```
+
+``` r
+nobel_living_science %>% 
+  ggplot(aes(x = country_us)) +
+  geom_bar() +
+  facet_wrap(~category) +
+  coord_flip() +
+  labs(title = "Nobel Laureates by Category", subtitle = "A look at country origin",
+       x = "Country of Origin", y = "Number of Laureates")
+```
+
+![](lab-03_files/figure-gfm/exercise3-1.png)<!-- -->
 
 ### Exercise 4
 
