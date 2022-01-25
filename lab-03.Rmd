@@ -66,14 +66,19 @@ nobel_living_science %>%
 ```
 
 ### Exercise 4
-
+# for some reason born_country does not exist
 ```{r born-country}
-born_country_us <- ifelse(born_country == "USA", "USA", "Other")
+nobel_living %>% 
+  mutate(
+    born_country_us <- ifelse(born_country == "USA", "USA", "Other")
+)
 ```
 ...
 
 ### Exercise 5
+```{r exercise 5}
 
+```
 ...
 
 ### Exercise 6
