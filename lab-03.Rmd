@@ -67,6 +67,9 @@ nobel_living_science %>%
 
 ### Exercise 4
 
+```{r born-country}
+born_country_us <- ifelse(born_country == "USA", "USA", "Other")
+```
 ...
 
 ### Exercise 5

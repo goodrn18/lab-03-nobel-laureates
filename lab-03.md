@@ -119,6 +119,10 @@ nobel_living_science %>%
 
 ### Exercise 4
 
+``` r
+born_country_us = 1
+```
+
 …
 
 ### Exercise 5
