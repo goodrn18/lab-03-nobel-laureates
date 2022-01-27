@@ -70,14 +70,14 @@ nobel_living_science %>%
 ```{r born-country}
 nobel_living <- nobel_living %>% 
   mutate(
-    born_country_us <- ifelse(born_country == "USA", "USA", "Other")
+    born_country_us = if_else(born_country == "USA", "USA", "Other")
 )
 ```
 ...
 
 ### Exercise 5
 ```{r exercise 5}
-nobel_living_science %>% 
+nobel_living %>% 
   ggplot(aes(x = born_country_us)) +
   geom_bar() +
   facet_wrap(~category) +
