@@ -89,4 +89,10 @@ nobel_living %>%
 
 ### Exercise 6
 
+```{r exercise-6}
+nobel_living %>% 
+  filter(country == "USA", born_country != "USA") 
+  
+```
+
 ...
