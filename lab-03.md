@@ -146,7 +146,9 @@ nobel_living %>%
 
 ``` r
 nobel_living %>% 
-  filter(country == "USA", born_country != "USA") 
+  filter(
+    country == "USA", 
+    born_country != "USA") 
 ```
 
     ## # A tibble: 45 x 28
@@ -169,5 +171,26 @@ nobel_living %>%
     ## #   born_country_original <chr>, born_city_original <chr>,
     ## #   died_country_original <chr>, died_city_original <chr>, city_original <chr>,
     ## #   country_original <chr>, country_us <chr>, born_country_us <chr>
+
+``` r
+nobel_living %>%   
+  count(born_country) %>% 
+    arrange(n)
+```
+
+    ## # A tibble: 34 x 2
+    ##    born_country     n
+    ##    <chr>        <int>
+    ##  1 Algeria          1
+    ##  2 Belgium          1
+    ##  3 Cyprus           1
+    ##  4 Finland          1
+    ##  5 Hungary          1
+    ##  6 Ireland          1
+    ##  7 Lithuania        1
+    ##  8 Luxembourg       1
+    ##  9 Mexico           1
+    ## 10 Morocco          1
+    ## # ... with 24 more rows
 
 …
