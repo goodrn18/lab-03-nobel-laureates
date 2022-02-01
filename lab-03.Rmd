@@ -93,8 +93,7 @@ nobel_living %>%
 nobel_living %>% 
   filter(
     country == "USA", 
-    born_country != "USA") 
-nobel_living %>%   
+    born_country != "USA") %>%   
   count(born_country) %>% 
     arrange(n)
 ```

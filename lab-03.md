@@ -148,49 +148,24 @@ nobel_living %>%
 nobel_living %>% 
   filter(
     country == "USA", 
-    born_country != "USA") 
-```
-
-    ## # A tibble: 45 x 28
-    ##       id firstname surname   year category affiliation  city  country born_date 
-    ##    <dbl> <chr>     <chr>    <dbl> <chr>    <chr>        <chr> <chr>   <date>    
-    ##  1    68 Chen Ning Yang      1957 Physics  Institute f~ Prin~ USA     1922-09-22
-    ##  2    69 Tsung-Dao Lee       1957 Physics  Columbia Un~ New ~ USA     1926-11-24
-    ##  3    97 Leo       Esaki     1973 Physics  IBM Thomas ~ York~ USA     1925-03-12
-    ##  4    98 Ivar      Giaever   1973 Physics  General Ele~ Sche~ USA     1929-04-05
-    ##  5   111 Arno      Penzias   1978 Physics  Bell Labora~ Holm~ USA     1933-04-26
-    ##  6   156 Horst L.  Störmer   1998 Physics  Columbia Un~ New ~ USA     1949-04-06
-    ##  7   157 Daniel C. Tsui      1998 Physics  Princeton U~ Prin~ USA     1939-02-28
-    ##  8   258 Roald     Hoffmann  1981 Chemist~ Cornell Uni~ Itha~ USA     1937-07-18
-    ##  9   265 Yuan T.   Lee       1986 Chemist~ University ~ Berk~ USA     1936-11-19
-    ## 10   270 Johann    Deisenh~  1988 Chemist~ University ~ Dall~ USA     1943-09-30
-    ## # ... with 35 more rows, and 19 more variables: died_date <date>, gender <chr>,
-    ## #   born_city <chr>, born_country <chr>, born_country_code <chr>,
-    ## #   died_city <chr>, died_country <chr>, died_country_code <chr>,
-    ## #   overall_motivation <chr>, share <dbl>, motivation <chr>,
-    ## #   born_country_original <chr>, born_city_original <chr>,
-    ## #   died_country_original <chr>, died_city_original <chr>, city_original <chr>,
-    ## #   country_original <chr>, country_us <chr>, born_country_us <chr>
-
-``` r
-nobel_living %>%   
+    born_country != "USA") %>%   
   count(born_country) %>% 
     arrange(n)
 ```
 
-    ## # A tibble: 34 x 2
+    ## # A tibble: 21 x 2
     ##    born_country     n
     ##    <chr>        <int>
-    ##  1 Algeria          1
-    ##  2 Belgium          1
-    ##  3 Cyprus           1
-    ##  4 Finland          1
-    ##  5 Hungary          1
-    ##  6 Ireland          1
-    ##  7 Lithuania        1
-    ##  8 Luxembourg       1
-    ##  9 Mexico           1
-    ## 10 Morocco          1
-    ## # ... with 24 more rows
+    ##  1 Austria          1
+    ##  2 Finland          1
+    ##  3 France           1
+    ##  4 Ireland          1
+    ##  5 Italy            1
+    ##  6 Lithuania        1
+    ##  7 Mexico           1
+    ##  8 Scotland         1
+    ##  9 South Africa     1
+    ## 10 Sweden           1
+    ## # ... with 11 more rows
 
 …
